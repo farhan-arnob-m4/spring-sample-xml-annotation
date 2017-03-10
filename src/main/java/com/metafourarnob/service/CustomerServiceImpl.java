@@ -12,8 +12,13 @@ import com.metafourarnob.repository.CustomerRepository;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 	
-	@Autowired
 	private CustomerRepository customerRepository;
+	@Autowired
+	private void setCustomerRepository(CustomerRepository customerRepository){
+		System.out.println("We are using setter injection");
+		this.customerRepository = customerRepository;
+		
+	}
 	
 	/* (non-Javadoc)
 	 * @see com.metafourarnob.service.CustomerService#findAll()
