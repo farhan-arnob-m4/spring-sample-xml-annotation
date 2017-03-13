@@ -13,7 +13,15 @@ import com.metafourarnob.repository.CustomerRepository;
 public class CustomerServiceImpl implements CustomerService {
 	
 	private CustomerRepository customerRepository;
+	
 	@Autowired
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		// TODO Auto-generated constructor stub
+		System.out.println("We are using constructor injection");
+		this.customerRepository = customerRepository;
+	}
+	
+	//@Autowired
 	private void setCustomerRepository(CustomerRepository customerRepository){
 		System.out.println("We are using setter injection");
 		this.customerRepository = customerRepository;
